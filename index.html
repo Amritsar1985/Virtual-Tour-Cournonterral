@@ -110,15 +110,16 @@
         }
 
         /* Pour les mobiles */
-        @media (max-width: 400px) {
+        @media (max-width: 600px) { /* Changer de 400px à 600px pour mieux adapter les téléphones */
             #minimap {
-                width: 100px; /* Réduit encore la minimap sur mobile */
+                width: 25vw; /* Utilise 25% de la largeur de l'écran sur mobile */
+                height: auto;
+                min-width: 150px; /* S'assure que la minimap ne soit pas trop petite */
                 bottom: 10px;
                 right: 10px;
             }
         }
     </style>
-
 
 
 
