@@ -104,16 +104,18 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 200px; /* Réduit la taille de la minimap */
-    height: 200px; /* Réduit la taille de la minimap */
+    width: 20vw; /* 20% de la largeur de l'écran */
+    height: 20vh; /* 20% de la hauteur de l'écran */
+    max-width: 250px; /* Limite la largeur à 250px */
+    max-height: 250px; /* Limite la hauteur à 250px */
     z-index: 1000;
-    border: 2px solid #fff; /* Bordure pour la visibilité */
+    border: 2px solid #fff; /* Bordure pour la visibilité, à retirer si nécessaire */
     }
 
     /* Tablette */
     @media (max-width: 1024px) {
     #minimap {
-    width: 150px; /* Réduit encore la minimap sur tablette */
+    width: 150px; /* Réduit la minimap sur tablette */
     height: 150px;
     bottom: 15px;
     right: 15px;
