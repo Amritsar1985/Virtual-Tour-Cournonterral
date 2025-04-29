@@ -99,5 +99,37 @@
             }
     </style>
 
+    /* Taille par défaut sur PC */
+    #minimap {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 200px; /* Réduit la taille de la minimap */
+    height: 200px; /* Réduit la taille de la minimap */
+    z-index: 1000;
+    border: 2px solid #fff; /* Bordure pour la visibilité */
+    }
+
+    /* Tablette */
+    @media (max-width: 1024px) {
+    #minimap {
+    width: 150px; /* Réduit encore la minimap sur tablette */
+    height: 150px;
+    bottom: 15px;
+    right: 15px;
+    }
+    }
+
+    /* Téléphone */
+    @media (max-width: 600px) {
+    #minimap {
+    width: 100px; /* Réduit encore la minimap sur mobile */
+    height: 100px;
+    bottom: 10px;
+    right: 10px;
+    }
+    }
+
+
 </body>
 </html>
