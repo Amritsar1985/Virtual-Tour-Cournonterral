@@ -79,32 +79,25 @@
         <img src="files/plan.png" alt="Mini Map" />
     </div>
 
-   <div id="minimap">
-  <img src="files/plan.png" alt="Mini Map" />
-</div>
+    <style>
+        #minimap {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            z-index: 9999;
+            border: 2px solid white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            background: #fff;
+            padding: 5px;
+        }
 
-<div id="minimap">
-  <img src="files/plan.png" alt="Mini Map" />
-</div>
-
-<style>
-#minimap {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  width: 200px;
-  z-index: 9999;
-  border: 2px solid white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-  background: #fff;
-  padding: 5px;
-}
-#minimap img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-</style>
+            #minimap img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+    </style>
 
 
 </body>
