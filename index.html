@@ -10,70 +10,91 @@
 </head>
 <body class="multiple-scenes view-control-buttons">
 
-<div id="pano"></div>
+    <div id="pano"></div>
 
-<div id="sceneList">
-  <ul class="scenes">
-    
-      <a href="javascript:void(0)" class="scene" data-id="0-salon">
-        <li class="text">Salon</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="1-chambre">
-        <li class="text">Chambre</li>
-      </a>
-    
-      <a href="javascript:void(0)" class="scene" data-id="2-sdb">
-        <li class="text">SDB</li>
-      </a>
-    
-  </ul>
-</div>
+    <div id="sceneList">
+        <ul class="scenes">
 
-<div id="titleBar">
-  <h1 class="sceneName"></h1>
-</div>
+            <a href="javascript:void(0)" class="scene" data-id="0-salon">
+            <li class="text">Salon</li>
+            </a>
 
-<a href="javascript:void(0)" id="autorotateToggle">
-  <img class="icon off" src="img/play.png">
-  <img class="icon on" src="img/pause.png">
-</a>
+            <a href="javascript:void(0)" class="scene" data-id="1-chambre">
+            <li class="text">Chambre</li>
+            </a>
 
-<a href="javascript:void(0)" id="fullscreenToggle">
-  <img class="icon off" src="img/fullscreen.png">
-  <img class="icon on" src="img/windowed.png">
-</a>
+            <a href="javascript:void(0)" class="scene" data-id="2-sdb">
+            <li class="text">SDB</li>
+            </a>
 
-<a href="javascript:void(0)" id="sceneListToggle">
-  <img class="icon off" src="img/expand.png">
-  <img class="icon on" src="img/collapse.png">
-</a>
+        </ul>
+    </div>
 
-<a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
-  <img class="icon" src="img/up.png">
-</a>
-<a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
-  <img class="icon" src="img/down.png">
-</a>
-<a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
-  <img class="icon" src="img/left.png">
-</a>
-<a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
-  <img class="icon" src="img/right.png">
-</a>
-<a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
-  <img class="icon" src="img/plus.png">
-</a>
-<a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
-  <img class="icon" src="img/minus.png">
-</a>
+    <div id="titleBar">
+        <h1 class="sceneName"></h1>
+    </div>
 
-<script src="vendor/screenfull.min.js" ></script>
-<script src="vendor/bowser.min.js" ></script>
-<script src="vendor/marzipano.js" ></script>
+    <a href="javascript:void(0)" id="autorotateToggle">
+        <img class="icon off" src="img/play.png">
+        <img class="icon on" src="img/pause.png">
+    </a>
 
-<script src="data.js"></script>
-<script src="index.js"></script>
+    <a href="javascript:void(0)" id="fullscreenToggle">
+        <img class="icon off" src="img/fullscreen.png">
+        <img class="icon on" src="img/windowed.png">
+    </a>
+
+    <a href="javascript:void(0)" id="sceneListToggle">
+        <img class="icon off" src="img/expand.png">
+        <img class="icon on" src="img/collapse.png">
+    </a>
+
+    <a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+        <img class="icon" src="img/up.png">
+    </a>
+    <a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+        <img class="icon" src="img/down.png">
+    </a>
+    <a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+        <img class="icon" src="img/left.png">
+    </a>
+    <a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+        <img class="icon" src="img/right.png">
+    </a>
+    <a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+        <img class="icon" src="img/plus.png">
+    </a>
+    <a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+        <img class="icon" src="img/minus.png">
+    </a>
+
+    <script src="vendor/screenfull.min.js"></script>
+    <script src="vendor/bowser.min.js"></script>
+    <script src="vendor/marzipano.js"></script>
+
+    <script src="data.js"></script>
+    <script src="index.js"></script>
+
+    <div id="minimap">
+        <img src="files/plan.png" alt="Mini Map" />
+    </div>
+
+    <style>
+        #minimap {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 200px;
+            border: 2px solid white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 9999;
+        }
+
+            #minimap img {
+                width: 100%;
+                height: auto;
+            }
+    </style>
 
 </body>
 </html>
