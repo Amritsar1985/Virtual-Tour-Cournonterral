@@ -1,46 +1,133 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Tour</title>
-    <link rel="stylesheet" href="style.css">
+<title>Cournonterral</title>
+<meta charset="utf-8">
+<meta name="viewport" content="target-densitydpi=device-dpi, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui" />
+<style> @-ms-viewport { width: device-width; } </style>
+<link rel="stylesheet" href="vendor/reset.min.css">
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="multiple-scenes view-control-buttons">
+
     <div id="pano"></div>
 
+    <div id="sceneList">
+        <ul class="scenes">
+
+            <a href="javascript:void(0)" class="scene" data-id="0-salon">
+            <li class="text">Salon</li>
+            </a>
+
+            <a href="javascript:void(0)" class="scene" data-id="1-chambre">
+            <li class="text">Chambre</li>
+            </a>
+
+            <a href="javascript:void(0)" class="scene" data-id="2-sdb">
+            <li class="text">SDB</li>
+            </a>
+
+        </ul>
+    </div>
+
     <div id="titleBar">
-        <span class="sceneName"></span>
+        <h1 class="sceneName"></h1>
     </div>
 
-    <!-- Minimap image -->
-    <div id="minimap-container">
-        <img id="minimap-img" src="img/minimap.png" alt="Minimap" />
-    </div>
+    <a href="javascript:void(0)" id="autorotateToggle">
+        <img class="icon off" src="img/play.png">
+        <img class="icon on" src="img/pause.png">
+    </a>
 
-    <!-- Scene list toggle -->
-    <div id="sceneListToggle"></div>
+    <a href="javascript:void(0)" id="fullscreenToggle">
+        <img class="icon off" src="img/fullscreen.png">
+        <img class="icon on" src="img/windowed.png">
+    </a>
 
-    <!-- Autorotate toggle -->
-    <div id="autorotateToggle"></div>
+    <a href="javascript:void(0)" id="sceneListToggle">
+        <img class="icon off" src="img/expand.png">
+        <img class="icon on" src="img/collapse.png">
+    </a>
 
-    <!-- Fullscreen toggle -->
-    <div id="fullscreenToggle"></div>
+    <a href="javascript:void(0)" id="viewUp" class="viewControlButton viewControlButton-1">
+        <img class="icon" src="img/up.png">
+    </a>
+    <a href="javascript:void(0)" id="viewDown" class="viewControlButton viewControlButton-2">
+        <img class="icon" src="img/down.png">
+    </a>
+    <a href="javascript:void(0)" id="viewLeft" class="viewControlButton viewControlButton-3">
+        <img class="icon" src="img/left.png">
+    </a>
+    <a href="javascript:void(0)" id="viewRight" class="viewControlButton viewControlButton-4">
+        <img class="icon" src="img/right.png">
+    </a>
+    <a href="javascript:void(0)" id="viewIn" class="viewControlButton viewControlButton-5">
+        <img class="icon" src="img/plus.png">
+    </a>
+    <a href="javascript:void(0)" id="viewOut" class="viewControlButton viewControlButton-6">
+        <img class="icon" src="img/minus.png">
+    </a>
 
-    <!-- Scene list -->
-    <div id="sceneList"></div>
+    <script src="vendor/screenfull.min.js"></script>
+    <script src="vendor/bowser.min.js"></script>
+    <script src="vendor/marzipano.js"></script>
 
-    <!-- Controls -->
-    <div id="viewUp"></div>
-    <div id="viewDown"></div>
-    <div id="viewLeft"></div>
-    <div id="viewRight"></div>
-    <div id="viewIn"></div>
-    <div id="viewOut"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/marzipano@0.10.0/dist/marzipano.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bowser@2.11.0/bowser.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull/5.1.0/screenfull.min.js"></script>
+    <script src="data.js"></script>
     <script src="index.js"></script>
+
+  
+
+    <div id="minimap">
+        <img id="minimap-img" src="img/minimap.png" alt="Mini Map" />
+    </div>
+
+
+
+
+
+    <style>
+        #minimap {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 40vw; /* 40% de la largeur de l'écran */
+            height: auto;
+            max-width: 500px; /* Limite la largeur à 500px */
+            z-index: 9999;
+            border: 2px solid white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            background: #fff;
+            padding: 5px;
+        }
+
+            #minimap img {
+                width: 100%;
+                height: auto;
+                display: block;
+            }
+
+        /* Pour les tablettes */
+        @media (max-width: 1024px) {
+            #minimap {
+                width: 200px; /* Réduit la taille de la minimap sur tablette */
+                bottom: 15px;
+                right: 15px;
+            }
+        }
+
+        /* Pour les mobiles */
+        @media (max-width: 600px) { /* Changer de 400px à 600px pour mieux adapter les téléphones */
+            #minimap {
+                width: 25vw; /* Utilise 25% de la largeur de l'écran sur mobile */
+                height: auto;
+                min-width: 150px; /* S'assure que la minimap ne soit pas trop petite */
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+    </style>
+
+
+
 </body>
 </html>
