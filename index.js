@@ -364,11 +364,41 @@
         modal.querySelector('.info-hotspot-close-wrapper').addEventListener('click', toggle);
 
         // Prevent touch and scroll events from reaching the parent element.
-        // This prevents the view control logic from interfering with the hotspot.
-        stopTouchAndScrollEventPropagation(wrapper);
+        function stopTouchAndScrollEventPropagation(element) {
+            element.addEventListener('touchstart', function (e) {
+                e.stopPropagation();
+            });
+            element.addEventListener('touchmove', function (e) {
+                e.stopPropagation();
+            });
+            element.addEventListener('touchend', function (e) {
+                e.stopPropagation();
+            });
+            element.addEventListener('mousedown', function (e) {
+                e.stopPropagation();
+            });
+            element.addEventListener('mousemove', function (e) {
+                e.stopPropagation();
+            });
+            element.addEventListener('mouseup', function (e) {
+                e.stopPropagation();
+            });
+        }
 
-        return wrapper;
-    }
+        // Find scene by ID.
+        function findSceneById(id) {
+            return scenes.find(function (scene) {
+                return scene.data.id === id;
+            });
+        }
 
-    // Prevent touch and scroll events from reaching the parent element.
-    function stop
+        // Find scene data by ID.
+        function findSceneDataById(id) {
+            var scene = findSceneById(id);
+            return scene ? scene.data : null;
+        }
+
+        // Start with the first scene.
+        switchScene(scenes[0]);
+
+    }) ();
