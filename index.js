@@ -181,15 +181,49 @@
   function sanitize(s) {
     return s.replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;');
   }
-
-  function switchScene(scene) {
-    stopAutorotate();
-    scene.view.setParameters(scene.data.initialViewParameters);
-    scene.scene.switchTo();
-    startAutorotate();
-    updateSceneName(scene);
-    updateSceneList(scene);
+    // Met à jour l'image de la minimap selon la scène courante
+    function updateMinimap(sceneId) {
+        const minimapImg = document.getElementById('minimap-img');
+        switch (sceneId) {
+            case 'salon':
+                minimapImg.src = 'img/minimap_salon.png';
+                break;
+            case 'chambre':
+                minimapImg.src = 'img/minimap_chambre.png';
+                break;
+            case 'sdb':
+                minimapImg.src = 'img/minimap_sdb.png';
+                break;
+            default:
+                minimapImg.src = 'img/minimap.png';
+        }
+    }
+  // Met à jour l'image de la minimap selon la scène courante
+  function updateMinimap(sceneId) {
+    const minimapImg = document.getElementById('minimap-img');
+    switch (sceneId) {
+      case 'salon':
+        minimapImg.src = 'img/minimap_salon.png';
+        break;
+      case 'chambre':
+        minimapImg.src = 'img/minimap_chambre.png';
+        break;
+      case 'sdb':
+        minimapImg.src = 'img/minimap_sdb.png';
+        break;
+      default:
+        minimapImg.src = 'img/minimap.png';
+    }
   }
+    function switchScene(scene) {
+        stopAutorotate();
+        scene.view.setParameters(scene.data.initialViewParameters);
+        scene.scene.switchTo();
+        updateMinimap(scene.data.id); // Met à jour la minimap ici
+        startAutorotate();
+        updateSceneName(scene);
+        updateSceneList(scene);
+    }
 
   function updateSceneName(scene) {
     sceneNameElement.innerHTML = sanitize(scene.data.name);
